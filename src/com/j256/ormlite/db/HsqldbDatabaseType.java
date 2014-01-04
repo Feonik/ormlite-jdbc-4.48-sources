@@ -147,4 +147,10 @@ public class HsqldbDatabaseType extends BaseDatabaseType {
 	public String getPingStatement() {
 		return "SELECT COUNT(*) FROM INFORMATION_SCHEMA.SYSTEM_TABLES";
 	}
+
+	// For HsqlDB v 2.1.0+
+	@Override
+	public boolean isCreateIfNotExistsSupported() {
+		return true;
+	}
 }
